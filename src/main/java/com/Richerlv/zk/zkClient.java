@@ -34,10 +34,9 @@ public class zkClient {
         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
-                List<String> children = null;
                 try {
-                    System.out.println("==========================================================");
-                    children = zkClient.getChildren("/", true);
+                    System.out.println("===================================================");
+                    List<String> children = zkClient.getChildren("/", true);
                     for(String child : children) {
                         System.out.println(child);
                     }
